@@ -1,5 +1,6 @@
 package com.slethron.statespacesearch.domain.test;
 
+import com.slethron.statespacesearch.Node;
 import com.slethron.statespacesearch.StateSpaceSearch;
 import com.slethron.statespacesearch.domain.TowersOfHanoiNode;
 import com.slethron.statespacesearch.factory.TowersOfHanoiFactory;
@@ -8,7 +9,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TowersOfHanoiNodeTest {
     @Test
@@ -89,7 +91,7 @@ class TowersOfHanoiNodeTest {
         printResult(result);
     }
 
-    private void printResult(List result) {
+    private void printResult(List<Node> result) {
         for (var i = 0; i < result.size(); i++) {
             System.out.print("Step #" + i + ": ");
             System.out.println(result.get(i));
