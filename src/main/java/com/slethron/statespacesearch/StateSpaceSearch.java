@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class StateSpaceSearch {
     public static List<Node> bfs(Node start, Node goal) {
@@ -22,6 +23,31 @@ public class StateSpaceSearch {
                 return getPath(node);
             } else {
                 q.addAll(node.getChildren());
+            }
+        }
+
+        return null;
+    }
+
+    public static List<Node> dfs(Node start, Node goal) {
+        return getPath(
+                dfs(start, goal, new HashSet<>())
+        );
+    }
+
+    private static Node dfs(Node start, Node goal, Set<Node> visited) {
+        if (start.equals(goal)) {
+            return start;
+        } else {
+            visited.add(start);
+            for (var node : start.getChildren()) {
+                if (visited.contains(node)) {
+                    continue;
+                }
+                var result = dfs(node, goal, visited);
+                if (result != null) {
+                    return result;
+                }
             }
         }
 
