@@ -34,7 +34,8 @@ public class TowersOfHanoi {
     }
 
     public void moveDisc(int source, int dest) {
-        if (source < 0 || source >= getNumTowers()) throw new IndexOutOfBoundsException("Source tower is out of bounds.");
+        if (source < 0 || source >= getNumTowers())
+            throw new IndexOutOfBoundsException("Source tower is out of bounds.");
         if (dest < 0 || dest >= getNumTowers()) throw new IndexOutOfBoundsException("Dest tower is out of bounds.");
         if (isTowerEmpty(source)) throw new IllegalStateException("Source tower is empty.");
         if (!isTowerEmpty(dest)
@@ -69,6 +70,7 @@ public class TowersOfHanoi {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof TowersOfHanoi)) return false;
+
         return towers.equals(((TowersOfHanoi) o).towers);
     }
 
@@ -79,6 +81,6 @@ public class TowersOfHanoi {
 
     @Override
     public String toString() {
-        return "TowersOfHanoi [" + "towers=" + towers + ", numDiscs=" + numDiscs + "]";
+        return "TowersOfHanoi [towers=" + towers + ", numDiscs=" + numDiscs + "]";
     }
 }

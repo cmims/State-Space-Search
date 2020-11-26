@@ -70,4 +70,16 @@ public class StateSpaceSearch {
 
         return null;
     }
+
+    public static String describePath(List<Node> path) {
+        var sb = new StringBuilder();
+        for (var i = 0; i < path.size(); i++) {
+            sb.append("Step #")
+                    .append(i).append(": ")
+                    .append(path.get(i))
+                    .append('\n');
+        }
+
+        return sb.toString();
+    }
 }

@@ -58,6 +58,7 @@ public class TowersOfHanoiNode extends Node {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof TowersOfHanoiNode)) return false;
+
         return Objects.equals(towers, ((TowersOfHanoiNode) o).towers);
     }
 
